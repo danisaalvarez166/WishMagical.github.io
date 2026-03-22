@@ -1,0 +1,278 @@
+﻿<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio Extravagante</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Space+Grotesk:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+    
+        :root {
+            --magenta: #ff00ff;
+            --magenta-dark: #8b008b;
+            --negro: #0a0a0a;
+            --gris-oscuro: #1a1a1a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--negro);
+            color: white;
+            font-family: 'Space Grotesk', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .bg-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, #300030 0%, #000000 100%);
+            z-index: -1;
+        }
+header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative; /* Necesario para las capas */
+
+    /* EL GIF DETRÁS DE TODO */
+    background-image: linear-gradient(rgba(10, 10, 10, 0.6), rgba(10, 10, 10, 0.6)), url('symmetry.gif');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Esto da un efecto de profundidad muy pro */
+}
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        h1 {
+                font-family: 'sans-serif', sans-serif;
+            font-size: clamp(3rem, 10vw, 6rem);
+            text-transform: uppercase;
+            background: linear-gradient(to right, var(--magenta), #ffffff, var(--magenta-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 20px rgba(255, 0, 255, 0.5));
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(10, 10, 10, 0.9);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid var(--magenta);
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: var(--magenta); text-shadow: 0 0 10px var(--magenta); }
+
+        section { padding: 80px 5%; max-width: 1200px; margin: 0 auto; }
+
+        h2 {
+            font-family: 'sans-serif', sans-serif;
+            color: var(--magenta);
+            margin-bottom: 30px;
+            border-left: 5px solid var(--magenta);
+            padding-left: 15px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--gris-oscuro);
+            height: 300px;
+            border: 2px solid #333;
+            overflow: hidden;
+            cursor: pointer;
+            transition: 0.4s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card:hover { border-color: var(--magenta); transform: translateY(-5px) scale(1.02); }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* ESTILO DEL MODAL */
+        .modal-overlay {
+            display: none; 
+            position: fixed;
+            z-index: 999;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            cursor: zoom-out;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-overlay img {
+            max-width: 90%;
+            max-height: 90%;
+            border: 3px solid white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        footer { text-align: center; padding: 40px; background: var(--magenta); color: black; font-weight: bold; margin-top: 50px;}
+        
+        /* Estilos específicos para Sobre Mí */
+        .about-content {
+            background: rgba(26, 26, 26, 0.8);
+            padding: 40px;
+            border-right: 5px solid var(--magenta);
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .highlight { color: var(--magenta); font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div id="modalContainer" class="modal-overlay" onclick="this.style.display='none'">
+        <img id="modalImg" src="" alt="Vista previa">
+    </div>
+
+    <div class="bg-gradient"></div>
+
+    <header>
+        <h1>WISH MAGICAL<br>PORTFOLIO</h1>
+        <p>AUDACIA & DISEÑO</p>
+    </header>
+
+    <nav>
+        <a href="#ilustraciones">Ilustraciones</a>
+        <a href="#logos">Logos</a>
+        <a href="#Tarjetas">Tarjetas</a>
+        <a href="#Carteles">Carteles</a>
+        <a href="#Textiles">Textiles</a>
+        <a href="#sobre-mi">Sobre Mí</a>
+        <a href="#Diseño de Moda">Diseño de Moda</a>                                   
+    </nav>
+    <section id="Tarjetas">
+        <h2>Tarjetas</h2>
+        <div class="grid">
+             <div class="card"><img src="./t.png"></div> 
+             <div class="card"><img src="./t2.png"></div> 
+    </section>
+
+    <section id="Carteles">
+        <h2>Carteles</h2>
+        <div class="grid">
+             <div class="card"><img src="./c.png"></div> 
+             <div class="card"><img src="./c2.png"></div> 
+    </section>
+
+
+    <section id="logos">
+        <h2>Logos</h2>
+        <div class="grid">
+            <div class="card"><img src="./n.jpg"></div>
+            <div class="card"><img src="./mm.png"></div>
+        </div>
+    </section>
+    <section id="Textiles">
+        <h2>Textiles</h2>
+        <div class="grid">
+            <div class="card"><img src="./0.png"></div>  
+            <div class="card"><img src="./08.png"></div>  
+    </section>
+    <section id="ilustraciones">
+        <h2>Ilustraciones</h2>
+        <div class="grid">
+            <div class="card"><img src="./5.png"></div>
+            <div class="card"><img src="./88.png"></div>
+        </div>
+    </section>
+
+<section id="Diseño de Moda">
+        <h2>Diseño de Moda</h2>
+        <div class="grid">
+            <div class="card"><img src="./2.png"></div>  
+            <div class="card"><img src="./666.png"></div>  
+    </section>
+
+    <section id="sobre-mi">
+        <h2>Sobre Mí</h2>
+        <div class="about-content">
+            <p>
+                Soy diseñadora e ilustradora enfocada en la creación de universos visuales con una estética <span class="highlight">gótica y noir</span>. 
+                A través de <span class="highlight">WISH MAGICAL</span>
+            </p>
+            <br>
+            <p>
+                Mi trabajo se caracteriza por una búsqueda constante de lo no convencional, utilizando el contraste extremo 
+                y la audacia para dar vida a marcas con una identidad inconfundible.
+            </p>
+        </div>
+    </section>
+
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <div class="contact-grid">
+            <a href="mailto:danisaalvarez166@gmail.com" class="contact-item">
+                <strong>Email</strong>
+                danisaalvarez166@gmail.com
+            </a>
+            <a href="https://instagram.com/Wish_Magical" target="_blank" class="contact-item">
+                <strong>Instagram</strong>
+                @Wish_Magical
+            </a>
+            <div class="contact-item">
+                <strong>Teléfono</strong>
+                +54 9 3644-745336
+            </div>
+        </div>
+    </section>
+
+    <footer>WISH MAGICAL © 2026</footer>
+
+    <script>
+        const modal = document.getElementById('modalContainer');
+        const modalImg = document.getElementById('modalImg');
+
+        document.querySelectorAll('.card img').forEach(img => {
+            img.addEventListener('click', () => {
+                modal.style.display = 'flex';
+                modalImg.src = img.src;
+            });
+        });
+
+        modal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
